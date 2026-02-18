@@ -79,6 +79,36 @@ Available endpoints:
 - GET /api/orders: list all orders
 - POST /api/orders: create a new order
 
+## Deploy (Cheapest)
+
+Recommended lowest-cost option: Vercel Hobby (typically free for personal projects; limits may change).
+
+### Option A: Deploy from GitHub (no CLI needed)
+
+1. Open Vercel and import repository `mixalis888/private_ergasia`
+2. Framework preset: Other
+3. Leave build settings as default (project includes `vercel.json`)
+4. Deploy
+
+### Option B: Deploy with Vercel CLI
+
+1. Install CLI:
+
+	npm i -g vercel
+
+2. Login and deploy from project folder:
+
+	vercel
+
+3. Promote to production:
+
+	vercel --prod
+
+### Important note
+
+Current app stores orders in memory, so serverless instances will not persist data between cold starts/redeploys.
+For persistent storage, next step is adding a small database (e.g., SQLite/Postgres).
+
 ## Project Structure
 
 - main.py: Application entry point and CLI loop
@@ -86,6 +116,8 @@ Available endpoints:
 - ergasia/models.py: Domain models (Customer, EshopManager, Order)
 - ergasia/services.py: Business logic (validation, save order, notifications)
 - pyproject.toml: Project metadata and dependency configuration
+- requirements.txt: Deployment dependencies for Vercel Python runtime
+- vercel.json: Vercel build and route configuration
 
 ## Notes
 
