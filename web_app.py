@@ -150,6 +150,10 @@ def home_page():
 def list_orders():
     return [order_to_dict(order) for order in service.orders]
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 @app.post("/api/orders", status_code=201)
 def create_order(payload: OrderCreateRequest):
