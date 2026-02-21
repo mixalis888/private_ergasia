@@ -168,6 +168,14 @@ http://localhost:8000
 
 http://15.237.105.165/
 
+Health check (production):
+
+http://15.237.105.165/health
+
+Health check (dev):
+
+http://localhost:8000/health
+
 ---
 
 # 7️⃣ Παράδειγμα Εκτέλεσης (CLI)
@@ -201,6 +209,7 @@ Email: giannis@email.gr
 - Προσομοίωση ειδοποιήσεων
 - Το `main.py` εκτελεί το CLI εργαλείο
 - Το `web_app.py` εκθέτει Web UI + API μέσω FastAPI/uvicorn
+- Endpoint υπηρεσίας υγείας: `/health`
 
 ---
 
